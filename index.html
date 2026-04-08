@@ -1,0 +1,1435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Fortune Digital | AI Automation & CRM Architect</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
+            overflow-x: hidden;
+            line-height: 1.5;
+            font-size: 16px;
+        }
+
+        /* ── MOBILE FONT OVERRIDES ── */
+        @media (max-width: 768px) {
+            body { font-size: 14px; }
+            h1, .hero-title        { font-size: 20px !important; }
+            h2, .section-title     { font-size: 18px !important; }
+            h3, .card-title        { font-size: 16px !important; }
+            p,  .text, .card-text  { font-size: 14px !important; }
+            .small-text, .skill-tag, .stat-label, .section-subtitle { font-size: 10px !important; }
+            .hero-stats .stat-number { font-size: 16px !important; }
+        }
+
+        /* ── LIGHT MODE ── */
+        body.light { background: #f8fafc; color: #0f172a; }
+        body.light .glass-effect { background: rgba(255,255,255,0.85); border-color: rgba(0,0,0,0.08); }
+        body.light .navbar.glass-effect { background: rgba(255,255,255,0.95); }
+        body.light .hero-badge,
+        body.light .skill-card,
+        body.light .category-tile,
+        body.light .project-card,
+        body.light .info-card,
+        body.light .contact-form,
+        body.light .value-card,
+        body.light .testimonial-card,
+        body.light .preview-card,
+        body.light .long-about-section { background: rgba(255,255,255,0.9); color: #0f172a; }
+        body.light .skill-card h3,
+        body.light .category-tile h3,
+        body.light .project-card h4,
+        body.light .value-card h3,
+        body.light .preview-card h3,
+        body.light .info-card h3,
+        body.light .testimonial-card h4,
+        body.light .testimonial-card p,
+        body.light .testimonial-card span { color: #0f172a; }
+        body.light .hero-description,
+        body.light .section-description { color: #475569; }
+        body.light .footer { background: #e2e8f0; border-top: 1px solid #cbd5e1; }
+        body.light .footer-links a { color: #475569; }
+        body.light .footer-links a:hover { color: #0066ff; }
+        body.light .form-group input,
+        body.light .form-group textarea { border-color: #cbd5e1; color: #0f172a; background: white; }
+        body.light .stat-label { color: #475569; }
+        body.light .skill-tag { background: rgba(0,102,255,0.1); color: #0066ff; }
+        body.light .hero-title .gradient-text { background: linear-gradient(135deg,#0066ff,#00ccff); -webkit-background-clip:text; background-clip:text; color:transparent; }
+        body.light .typewriter-prefix { color: #475569; }
+        body.light .typewriter-text  { color: #0066ff; }
+        body.light .typed-cursor     { color: #0066ff; }
+        body.light .stat-item  { background: rgba(0,102,255,0.08); border-color: rgba(0,102,255,0.2); }
+        body.light .stat-number{ color: #0066ff; }
+        body.light .hero-badge span { color: #0066ff; }
+        body.light .nav-menu { background: rgba(255,255,255,0.97) !important; }
+        body.light .nav-link { color: #0f172a !important; }
+        body.light .nav-link:hover { color: #0066ff !important; }
+        body.light .mouse { border-color: rgba(0,0,0,0.3); }
+        body.light .mouse::before { background: rgba(0,0,0,0.6); }
+        body.light .hero-scroll span { color: rgba(0,0,0,0.5); }
+        body.light .btn-primary  { color: white !important; }
+        body.light .btn-secondary{ color: #0066ff !important; background: rgba(0,0,0,0.1); border-color: rgba(0,0,0,0.2); }
+
+        /* ── GLASS ── */
+        .glass-effect {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        /* ══════════════════════════════════════
+           NAVBAR
+        ══════════════════════════════════════ */
+        .navbar {
+            position: fixed; top: 0; width: 100%;
+            z-index: 1000; transition: all 0.3s; padding: 1rem 0;
+        }
+        .navbar.scrolled { padding: 0.6rem 0; background: rgba(10,10,10,0.96); }
+        body.light .navbar.scrolled { background: rgba(255,255,255,0.96); }
+
+        .nav-container {
+            max-width: 1400px; margin: 0 auto;
+            padding: 0 2rem;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        @media (max-width: 768px) { .nav-container { padding: 0 20px; } }
+
+        .nav-logo { font-size: 1.4rem; font-weight: 800; }
+        @media (max-width: 768px) { .nav-logo { font-size: 14px; } }
+        .logo-text   { color: white; }
+        body.light .logo-text { color: #0f172a; }
+        .logo-accent { background: linear-gradient(135deg,#0066ff,#00ccff); -webkit-background-clip:text; background-clip:text; color:transparent; }
+
+        .nav-right  { display: flex; align-items: center; gap: 1.2rem; }
+        .nav-menu   { display: flex; align-items: center; gap: 2rem; }
+        .nav-links  { display: flex; list-style: none; gap: 1.8rem; }
+        .nav-link   { color: white; text-decoration: none; font-weight: 500; font-size: 0.9rem; transition: 0.3s; cursor: pointer; }
+        body.light .nav-link { color: #0f172a; }
+        .nav-link:hover, .nav-link.active { color: #0066ff; }
+
+        .nav-hire-btn {
+            background: linear-gradient(135deg,#0066ff,#00ccff);
+            border: none; padding: 0.5rem 1.3rem; border-radius: 40px;
+            color: white; font-weight: 600; font-size: 0.85rem;
+            cursor: pointer; transition: all 0.3s ease;
+            display: flex; align-items: center; gap: 0.5rem;
+        }
+        .nav-hire-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0,102,255,0.4); }
+
+        .theme-toggle {
+            background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 40px; padding: 5px 10px; cursor: pointer;
+            font-size: 0.8rem; display: flex; align-items: center; gap: 5px;
+            color: white; transition: all 0.3s ease;
+        }
+        .theme-toggle:hover { transform: scale(1.05); }
+        body.light .theme-toggle { background: rgba(0,0,0,0.05); border-color: rgba(0,0,0,0.15); color: #0f172a; }
+        .theme-toggle i:first-child { display: inline; }
+        .theme-toggle i:last-child  { display: none; }
+        body.light .theme-toggle i:first-child { display: none; }
+        body.light .theme-toggle i:last-child  { display: inline; }
+
+        .hamburger { display: none; flex-direction: column; cursor: pointer; gap: 5px; width: 24px; height: 24px; }
+        .hamburger span { width: 24px; height: 2px; background: white; transition: all 0.3s ease; border-radius: 2px; }
+        body.light .hamburger span { background: #0f172a; }
+        .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
+        .hamburger.active span:nth-child(2) { opacity: 0; transform: scale(0); }
+        .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
+
+        /* ── Mobile menu ── */
+        @media (max-width: 968px) {
+            .nav-right { gap: 0.8rem; }
+
+            .nav-menu {
+                display: none;
+                position: absolute; top: 100%; right: 0;
+                width: auto; min-width: 220px;
+                backdrop-filter: blur(12px);
+                flex-direction: column;
+                padding: 0.6rem; gap: 0.3rem;
+                border-radius: 16px; z-index: 999;
+                margin-top: 12px;
+                background: rgba(10,10,10,0.98);
+                border: 1px solid rgba(0,102,255,0.3);
+                opacity: 0; transform: translateY(-20px) scale(0.95);
+                transition: all 0.3s ease; overflow: hidden;
+            }
+            body.light .nav-menu {
+                background: rgba(255,255,255,0.98);
+                border: 1px solid rgba(0,102,255,0.2);
+                box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            }
+            .nav-menu.show {
+                display: flex; opacity: 1; transform: translateY(0) scale(1);
+                animation: bounceIn 0.4s cubic-bezier(0.68,-0.55,0.265,1.55);
+            }
+            .nav-menu.closing {
+                animation: bounceOut 0.3s ease forwards;
+                pointer-events: none;
+            }
+            @keyframes bounceIn {
+                0%  { opacity:0; transform:translateY(-30px) scale(0.9); }
+                50% { opacity:0.8; transform:translateY(5px) scale(1.02); }
+                100%{ opacity:1; transform:translateY(0) scale(1); }
+            }
+            @keyframes bounceOut {
+                0%  { opacity:1; transform:translateY(0) scale(1); }
+                100%{ opacity:0; transform:translateY(-20px) scale(0.95); }
+            }
+            .nav-links { flex-direction: column; gap: 0.3rem; text-align: left; width: 100%; margin: 0; padding: 0; }
+            .nav-links li { text-align: left; width: 100%; list-style: none; }
+            .nav-link {
+                text-align: left; display: block;
+                padding: 10px 14px; border-radius: 10px;
+                transition: all 0.25s ease; font-size: 0.85rem;
+            }
+            .nav-link:hover { background: rgba(0,102,255,0.2); transform: translateX(4px); }
+            body.light .nav-link:hover { background: rgba(0,102,255,0.12); color: #0066ff; }
+            .nav-hire-btn {
+                margin: 0.3rem 0 0; padding: 10px 14px; font-size: 0.85rem;
+                width: 100%; text-align: center; border-radius: 10px; justify-content: center;
+            }
+            .hamburger { display: flex; }
+            .theme-toggle { padding: 4px 8px; font-size: 12px; }
+        }
+
+        /* ══════════════════════════════════════
+           HERO
+        ══════════════════════════════════════ */
+        .hero {
+            min-height: 100vh; position: relative;
+            display: flex; align-items: center;
+            overflow: hidden; padding-top: 100px; margin-bottom: 80px;
+        }
+        @media (max-width: 768px) {
+            .hero { padding-top: 80px; margin-bottom: 40px; text-align: left; }
+        }
+        .hero-particles { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; }
+
+        .hero-container {
+            max-width: 1400px; margin: 0 auto; padding: 0 2rem;
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 4rem; align-items: center;
+            position: relative; z-index: 2;
+        }
+        @media (max-width: 768px) {
+            .hero-container { grid-template-columns: 1fr; padding: 0 20px; gap: 2rem; text-align: left; }
+        }
+
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            padding: 0.4rem 1rem; border-radius: 40px;
+            margin-bottom: 1.5rem; font-size: 0.75rem; font-weight: 600;
+        }
+        .hero-title { font-size: 2.8rem; font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
+        @media (max-width: 768px) { .hero-title { font-size: 20px !important; } }
+
+        .gradient-text { background: linear-gradient(135deg,#0066ff,#00ccff); -webkit-background-clip:text; background-clip:text; color:transparent; }
+
+        .typewriter-container { margin-bottom: 1.5rem; }
+        .typewriter-prefix { font-size: 1.1rem; font-weight: 500; color: rgba(255,255,255,0.8); }
+        .typewriter-text  { font-size: 1.3rem; font-weight: 700; color: #0066ff; }
+        .typed-cursor     { font-size: 1.3rem; font-weight: 700; color: #0066ff; animation: blink 0.7s infinite; }
+        @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+        .hero-description { font-size: 0.95rem; color: rgba(255,255,255,0.7); margin-bottom: 2rem; line-height: 1.6; max-width: 500px; }
+        @media (max-width: 768px) { .hero-description { max-width: 100%; font-size: 14px !important; } }
+
+        .hero-cta { display: flex; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap; justify-content: flex-start; }
+
+        .btn-primary {
+            background: linear-gradient(135deg,#0066ff,#00ccff);
+            border: none; padding: 0.7rem 1.8rem; border-radius: 40px;
+            color: white; font-weight: 600; font-size: 0.9rem;
+            cursor: pointer; transition: all 0.3s ease;
+            display: inline-flex; align-items: center; gap: 0.5rem;
+        }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,102,255,0.4); }
+
+        .btn-secondary {
+            background: rgba(255,255,255,0.08); backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.15);
+            padding: 0.7rem 1.8rem; border-radius: 40px;
+            color: white; font-weight: 600; font-size: 0.9rem;
+            cursor: pointer; transition: all 0.3s ease;
+            display: inline-flex; align-items: center; gap: 0.5rem;
+        }
+        .btn-secondary:hover { transform: translateY(-3px); background: rgba(255,255,255,0.15); border-color: rgba(0,102,255,0.5); }
+
+        .hero-stats { display: flex; gap: 2rem; flex-wrap: wrap; margin-top: 0.5rem; justify-content: flex-start; }
+        @media (max-width: 768px) { .hero-stats { gap: 0.8rem; } }
+
+        .stat-item {
+            display: flex; flex-direction: column;
+            background: rgba(0,102,255,0.08); backdrop-filter: blur(8px);
+            padding: 0.6rem 1.2rem; border-radius: 20px;
+            border: 1px solid rgba(0,102,255,0.2); transition: all 0.3s ease;
+        }
+        .stat-item:hover { transform: translateY(-3px); background: rgba(0,102,255,0.15); border-color: #0066ff; }
+        .stat-number { font-size: 1.6rem; font-weight: 800; color: #0066ff; letter-spacing: -0.02em; }
+        .stat-label  { font-size: 0.6rem; letter-spacing: 1px; color: rgba(255,255,255,0.7); font-weight: 500; }
+
+        .hero-visual { position: relative; height: 380px; }
+        .floating-elements { position: relative; height: 100%; }
+        .floating-card {
+            position: absolute; padding: 0.7rem 1.2rem; border-radius: 60px;
+            display: flex; align-items: center; gap: 0.5rem;
+            animation: float 4s ease-in-out infinite;
+            font-size: 0.8rem; font-weight: 500; cursor: pointer; transition: all 0.3s ease; z-index: 10;
+        }
+        .floating-card:hover { transform: scale(1.05) translateY(-5px); background: rgba(0,102,255,0.2); border-color: #0066ff; }
+        .floating-card:nth-child(1){ top:20%; left:10%; animation-delay:0s; }
+        .floating-card:nth-child(2){ top:50%; right:15%; animation-delay:1s; }
+        .floating-card:nth-child(3){ bottom:20%; left:20%; animation-delay:2s; }
+        @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+        .floating-card i { font-size: 1.1rem; color: #0066ff; }
+        @media (max-width: 768px) { .hero-visual, .floating-elements, .floating-card { display: none; } }
+
+        .hero-scroll {
+            position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%);
+            display: flex; flex-direction: column; align-items: center; gap: 0.5rem; z-index: 10;
+        }
+        @media (max-width: 768px) { .hero-scroll { display: none; } }
+        .mouse { width: 24px; height: 38px; border: 2px solid rgba(255,255,255,0.4); border-radius: 20px; position: relative; }
+        .mouse::before {
+            content: ''; position: absolute; top: 7px; left: 50%; transform: translateX(-50%);
+            width: 3px; height: 7px; background: rgba(255,255,255,0.8); border-radius: 2px;
+            animation: scrollWheel 1.5s infinite;
+        }
+        @keyframes scrollWheel { 0%{opacity:1;transform:translateX(-50%) translateY(0)} 100%{opacity:0;transform:translateX(-50%) translateY(12px)} }
+
+        /* ══════════════════════════════════════
+           PAGE SYSTEM
+        ══════════════════════════════════════ */
+        .page { display: none; animation: fadeIn 0.4s ease; }
+        .page.active-page { display: block; }
+        @keyframes fadeIn { from{opacity:0;transform:translateY(15px)} to{opacity:1;transform:translateY(0)} }
+
+        .page-section { padding: 10rem 0 6rem; }
+        @media (max-width: 768px) { .page-section { padding: 7rem 0 4rem; } }
+
+        .container { max-width: 1400px; margin: 0 auto; padding: 0 2rem; }
+        @media (max-width: 768px) { .container { padding: 0 20px; } }
+
+        .section-header { text-align: center; margin-bottom: 3rem; }
+        .section-subtitle { color: #0066ff; font-weight: 600; letter-spacing: 2px; margin-bottom: 1rem; display: inline-block; font-size: 0.7rem; text-transform: uppercase; }
+        .section-title { font-size: 2rem; font-weight: 700; margin-bottom: 1rem; }
+        .section-description { color: rgba(255,255,255,0.6); max-width: 600px; margin: 0 auto; font-size: 0.9rem; }
+
+        .section-separator {
+            width: 100%; height: 1px;
+            background: linear-gradient(90deg,transparent,#0066ff,#00ccff,#0066ff,transparent);
+            margin: 3rem 0;
+        }
+        @media (max-width: 768px) { .section-separator { margin: 2rem 0; } }
+
+        /* ── Preview Cards ── */
+        .preview-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); gap: 2rem; margin: 3rem 0; }
+        @media (max-width: 768px) { .preview-grid { grid-template-columns: 1fr; gap: 1rem; margin: 2rem 0; } }
+        .preview-card { padding: 2rem; border-radius: 28px; text-align: center; transition: all 0.3s ease; cursor: pointer; }
+        @media (max-width: 768px) { .preview-card { padding: 1rem; } }
+        .preview-card:hover { transform: translateY(-6px); }
+        .preview-card i { font-size: 2.2rem; color: #0066ff; margin-bottom: 1rem; }
+
+        /* ── Values Grid ── */
+        .values-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(240px,1fr)); gap: 2rem; margin: 3rem 0; }
+        @media (max-width: 768px) {
+            .values-grid { grid-template-columns: repeat(2,1fr); gap: 0.8rem; margin: 2rem 0; }
+            .value-card { padding: 0.8rem; }
+            .value-card h3 { font-size: 12px !important; }
+            .value-card p  { font-size: 10px !important; }
+        }
+        .value-card { padding: 2rem; border-radius: 24px; text-align: center; transition: all 0.3s ease; cursor: pointer; }
+        .value-card:hover { transform: translateY(-5px); }
+        .value-card i { font-size: 1.8rem; color: #0066ff; margin-bottom: 1rem; }
+
+        /* ══════════════════════════════════════
+           TESTIMONIAL CAROUSEL — MOBILE FIXED
+        ══════════════════════════════════════ */
+        .testimonials-section { margin: 4rem 0 3rem; padding: 1rem 0; position: relative; }
+
+        .testimonial-wrapper {
+            position: relative;
+            /* enough room for the arrow buttons */
+            padding: 0 56px;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+        @media (max-width: 768px) {
+            .testimonial-wrapper {
+                /* tighter on mobile, buttons are smaller */
+                padding: 0 36px;
+            }
+        }
+
+        /* The swiper container itself must NOT clip its children on mobile */
+        .testimonials-carousel {
+            overflow: hidden;           /* swiper needs this */
+            padding: 1rem 0;           /* vertical breathing room so box-shadows aren't clipped */
+        }
+
+        .testimonial-card {
+            padding: 2rem;
+            border-radius: 24px;
+            text-align: center;
+            transition: transform 0.4s ease, opacity 0.4s ease, box-shadow 0.4s ease;
+            /* ✦ KEY: give the card a defined height so swiper can size the slide correctly */
+            height: auto;
+            /* avoid horizontal margin bleeding outside the slide */
+            margin: 0;
+        }
+
+        /* Desktop: the center slide pops, neighbours fade slightly */
+        @media (min-width: 769px) {
+            .testimonial-card {
+                transform: scale(0.92);
+                opacity: 0.7;
+            }
+            .swiper-slide-active .testimonial-card {
+                transform: scale(1.05);
+                opacity: 1;
+                box-shadow: 0 20px 35px -12px rgba(0,102,255,0.3);
+                border-color: rgba(0,102,255,0.4);
+            }
+        }
+
+        /* Mobile: every visible card is full-size — no scaling, no fading */
+        @media (max-width: 768px) {
+            .testimonial-card {
+                transform: none !important;
+                opacity: 1 !important;
+                padding: 1.2rem;
+                box-shadow: none !important;
+            }
+            /* No override for swiper-slide-active needed — they're all the same */
+
+            .testimonial-card p { font-size: 13px !important; }
+        }
+
+        .testimonial-card:hover { transform: translateY(-5px); }
+        @media (max-width: 768px) { .testimonial-card:hover { transform: none; } }
+
+        .testimonial-card i.fa-quote-left { font-size: 1.8rem; color: #0066ff; opacity: 0.5; margin-bottom: 1rem; }
+
+        /* Swiper pagination dots */
+        .swiper-pagination { position: relative; bottom: -10px; margin-top: 20px; }
+        .swiper-pagination-bullet        { background: #0066ff; opacity: 0.5; }
+        .swiper-pagination-bullet-active { background: #0066ff; opacity: 1; }
+
+        /* Custom prev/next arrows */
+        .swiper-button-prev-custom,
+        .swiper-button-next-custom {
+            position: absolute; top: 50%; transform: translateY(-50%);
+            width: 44px; height: 44px;
+            background: linear-gradient(135deg,#0066ff,#00ccff);
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            cursor: pointer; z-index: 20; transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,102,255,0.3);
+            /* keep arrows on top of swiper overflow */
+            pointer-events: auto;
+        }
+        .swiper-button-prev-custom { left: 0; }
+        .swiper-button-next-custom { right: 0; }
+        .swiper-button-prev-custom:hover,
+        .swiper-button-next-custom:hover { transform: translateY(-50%) scale(1.1); }
+        @media (max-width: 768px) {
+            .swiper-button-prev-custom,
+            .swiper-button-next-custom { width: 28px; height: 28px; }
+            .swiper-button-prev-custom i,
+            .swiper-button-next-custom i { font-size: 11px; }
+        }
+
+        /* ══════════════════════════════════════
+           SKILLS PAGE
+        ══════════════════════════════════════ */
+        .skills-wrapper { display: grid; grid-template-columns: repeat(auto-fill,minmax(300px,1fr)); gap: 2rem; margin: 3rem 0; }
+        @media (max-width: 768px) {
+            .skills-wrapper { grid-template-columns: repeat(2,1fr); gap: 0.8rem; margin: 2rem 0; }
+            .skill-card { padding: 0.8rem; }
+            .skill-card h3 { font-size: 11px !important; }
+            .skill-tag { font-size: 8px !important; padding: 0.2rem 0.5rem; }
+        }
+        .skill-card { padding: 1.8rem; border-radius: 24px; transition: all 0.3s ease; cursor: pointer; }
+        .skill-card:hover { transform: translateY(-4px); }
+        .skill-card i { font-size: 2rem; color: #0066ff; margin-bottom: 1rem; }
+        .skill-tags { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1rem; }
+        .skill-tag  { background: rgba(0,102,255,0.12); padding: 0.3rem 0.9rem; border-radius: 40px; font-size: 0.7rem; font-weight: 500; }
+
+        /* ══════════════════════════════════════
+           PORTFOLIO PAGE
+        ══════════════════════════════════════ */
+        .portfolio-category-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(260px,1fr)); gap: 2rem; margin: 3rem 0; }
+        @media (max-width: 768px) {
+            .portfolio-category-grid { grid-template-columns: repeat(2,1fr); gap: 0.8rem; margin: 2rem 0; }
+            .category-tile { padding: 0.8rem; }
+            .category-tile h3 { font-size: 11px !important; }
+            .category-tile p  { font-size: 8px !important; }
+            .category-tile i  { font-size: 1.2rem !important; }
+        }
+        .category-tile { padding: 1.8rem; border-radius: 24px; text-align: center; cursor: pointer; transition: all 0.3s ease; }
+        .category-tile:hover { transform: translateY(-4px); }
+        .category-tile i { font-size: 2rem; color: #0066ff; margin-bottom: 1rem; }
+
+        .project-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(300px,1fr)); gap: 2rem; margin-top: 2rem; }
+        @media (max-width: 768px) { .project-grid { grid-template-columns: 1fr; gap: 1rem; } }
+        .project-card { padding: 1rem; border-radius: 20px; cursor: pointer; transition: all 0.3s ease; }
+        .project-card:hover { transform: translateY(-4px); }
+        .project-card img { width: 100%; height: 170px; object-fit: cover; border-radius: 16px; margin-bottom: 1rem; }
+
+        .back-btn { background: none; border: none; color: #0066ff; font-weight: 600; font-size: 0.9rem; margin-bottom: 2rem; cursor: pointer; display: inline-flex; align-items: center; gap: 0.5rem; transition: all 0.3s ease; }
+        .back-btn:hover { gap: 0.8rem; }
+
+        /* ══════════════════════════════════════
+           HIRE PAGE
+        ══════════════════════════════════════ */
+        .hire-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin: 3rem 0; }
+        @media (max-width: 768px) { .hire-grid { grid-template-columns: 1fr; gap: 1.5rem; margin: 2rem 0; } }
+        .hire-form, .info-card { padding: 2rem; border-radius: 24px; }
+        @media (max-width: 768px) { .hire-form, .info-card { padding: 1rem; } }
+
+        .form-group { margin-bottom: 1.5rem; }
+        .form-group input,
+        .form-group textarea {
+            width: 100%; padding: 1rem;
+            background: transparent; border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 12px; color: white;
+            font-family: inherit; font-size: 0.9rem; transition: all 0.3s ease;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus { outline: none; border-color: #0066ff; }
+        .btn-full { width: 100%; justify-content: center; }
+
+        .info-card { text-align: center; margin-bottom: 1.5rem; transition: all 0.3s ease; }
+        .info-card:hover { transform: translateY(-5px); }
+        .info-card i { font-size: 1.6rem; color: #0066ff; margin-bottom: 0.5rem; }
+
+        /* ── Social CTA ── */
+        .social-cta-section { margin: 2rem 0 3rem; }
+        .social-links-grid  { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin: 2rem 0; }
+        @media (max-width: 768px) {
+            .social-links-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 1rem; }
+            .social-cta-card { padding: 0.8rem; min-width: auto; }
+            .social-cta-card i   { font-size: 1.5rem; }
+            .social-cta-card span{ font-size: 10px; }
+        }
+        .social-cta-card {
+            display: flex; flex-direction: column; align-items: center;
+            padding: 1.5rem 2rem; border-radius: 28px;
+            transition: all 0.3s ease; text-decoration: none; color: inherit; min-width: 140px; cursor: pointer;
+        }
+        .social-cta-card:hover { transform: translateY(-8px); border-color: #0066ff; }
+        .social-cta-card i       { font-size: 2rem; margin-bottom: 0.5rem; }
+        .social-cta-card.linkedin  i { color: #0077b5; }
+        .social-cta-card.twitter   i { color: #1da1f2; }
+        .social-cta-card.instagram i { color: #e4405f; }
+        .social-cta-card.facebook  i { color: #1877f2; }
+
+        /* ══════════════════════════════════════
+           ABOUT PAGE
+        ══════════════════════════════════════ */
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; margin: 3rem 0; }
+        @media (max-width: 768px) {
+            .about-grid { grid-template-columns: 1fr; gap: 1.5rem; margin: 2rem 0; }
+            .about-grid .about-image { text-align: center; }
+        }
+        .about-image img { width: 100%; max-width: 320px; border-radius: 32px; box-shadow: 0 20px 40px rgba(0,0,0,0.3); margin: 0 auto; display: block; }
+
+        .long-about-section { margin: 4rem 0 2rem; padding: 3rem; border-radius: 32px; border: 1px solid rgba(0,102,255,0.3); }
+        @media (max-width: 768px) { .long-about-section { padding: 1rem; margin: 2rem 0; } }
+        .long-about-content { max-width: 1000px; margin: 0 auto; }
+        .long-about-content h3 { font-size: 1.5rem; margin-bottom: 1rem; color: #0066ff; }
+        .long-about-content h4 { font-size: 1.1rem; margin: 1rem 0 0.5rem; color: #00ccff; }
+        .long-about-content p  { margin-bottom: 0.8rem; line-height: 1.6; opacity: 0.85; }
+        .long-about-content ul { margin: 0.5rem 0 0.8rem 1.5rem; list-style: none; }
+        .long-about-content ul li { margin-bottom: 0.4rem; position: relative; padding-left: 1.2rem; font-size: 14px; }
+        .long-about-content ul li:before { content:"▹"; position:absolute; left:0; color:#0066ff; }
+
+        .impact-numbers { display: grid; grid-template-columns: repeat(4,1fr); gap: 1rem; margin: 1.5rem 0; text-align: center; }
+        @media (max-width: 768px) { .impact-numbers { grid-template-columns: repeat(2,1fr); gap: 0.8rem; } }
+        .impact-number-item { padding: 0.8rem; border-radius: 20px; background: rgba(0,102,255,0.1); }
+        .impact-number-item .big-number { font-size: 1.5rem; font-weight: 800; color: #0066ff; }
+        @media (max-width: 768px) { .impact-number-item .big-number { font-size: 18px; } }
+
+        /* ── Page CTA ── */
+        .page-cta { text-align: center; margin: 3rem 0 2rem; padding: 1.5rem; border-radius: 32px; }
+        @media (max-width: 768px) {
+            .page-cta { margin: 2rem 0 1rem; padding: 1rem; }
+            .page-cta h3 { font-size: 16px !important; }
+        }
+        .page-cta-buttons { display: flex; gap: 1rem; justify-content: center; margin-top: 1rem; flex-wrap: wrap; }
+        @media (max-width: 768px) {
+            .page-cta-buttons { flex-direction: row; gap: 0.8rem; }
+            .page-cta-buttons .btn-primary,
+            .page-cta-buttons .btn-secondary { padding: 0.5rem 1rem; font-size: 12px; }
+        }
+
+        /* ── Cert Row ── */
+        .cert-row { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 1rem; }
+        @media (max-width: 768px) { .cert-row { justify-content: center; } }
+        .cert-tag { background: rgba(0,102,255,0.12); padding: 0.4rem 1rem; border-radius: 40px; font-size: 0.75rem; font-weight: 500; }
+
+        /* ══════════════════════════════════════
+           SUCCESS MODAL + FIREWORKS
+        ══════════════════════════════════════ */
+        .success-modal-overlay {
+            position: fixed; top:0; left:0; width:100%; height:100%;
+            background: rgba(0,0,0,0.85); backdrop-filter: blur(8px);
+            z-index: 3000; display: flex; justify-content: center; align-items: center;
+            animation: fadeIn 0.3s ease;
+        }
+        .success-modal {
+            background: #1a1a2e; max-width: 450px; width: 90%;
+            border-radius: 32px; padding: 2rem; text-align: center;
+            animation: slideUp 0.4s cubic-bezier(0.2,0.9,0.4,1.1);
+            border: 1px solid rgba(74,222,128,0.3);
+            position: relative; z-index: 3001;
+        }
+        @media (max-width: 768px) {
+            .success-modal { padding: 1.5rem; }
+            .success-modal h3 { font-size: 18px !important; }
+        }
+        body.light .success-modal { background: white; }
+        @keyframes slideUp { from{opacity:0;transform:translateY(40px)} to{opacity:1;transform:translateY(0)} }
+        .success-check-icon {
+            width: 70px; height: 70px;
+            background: linear-gradient(135deg,#22c55e,#16a34a);
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 1rem;
+            animation: popIn 0.5s cubic-bezier(0.34,1.2,0.64,1);
+        }
+        @keyframes popIn { 0%{transform:scale(0);opacity:0} 70%{transform:scale(1.1)} 100%{transform:scale(1);opacity:1} }
+        .success-check-icon i { font-size: 2.5rem; color: white; }
+        .success-modal h3 { font-size: 1.4rem; margin-bottom: 0.5rem; color: #22c55e; }
+        .success-modal p  { margin-bottom: 1rem; line-height: 1.5; opacity: 0.8; font-size: 14px; }
+        .success-modal button {
+            background: linear-gradient(135deg,#0066ff,#00ccff);
+            border: none; padding: 0.7rem 1.5rem; border-radius: 40px;
+            color: white; font-weight: 600; cursor: pointer; transition: all 0.3s ease;
+        }
+        .success-modal button:hover { transform: scale(0.98); }
+        #fireworks-canvas { position: fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:3002; }
+
+        /* ══════════════════════════════════════
+           FOOTER
+        ══════════════════════════════════════ */
+        .footer { background: #0a0f1a; padding: 3rem 0 2rem; margin-top: 4rem; border-top: 1px solid rgba(0,102,255,0.2); }
+        body.light .footer { background: #e2e8f0; border-top: 1px solid #cbd5e1; }
+
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2rem; margin-bottom: 2rem; }
+        @media (max-width: 768px) {
+            /* Single column for brand, then 3 equal cols for links */
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            /* Brand row spans full width naturally in 1-col grid */
+            .footer-brand { text-align: left; }
+            /* The 3 link sections sit in a row on mobile */
+            .footer-links-row {
+                display: grid;
+                grid-template-columns: repeat(3,1fr);
+                gap: 1rem;
+            }
+        }
+
+        .footer-logo { font-size: 1.2rem; font-weight: 800; margin-bottom: 1rem; }
+        .social-links { display: flex; gap: 0.8rem; margin-top: 1rem; justify-content: flex-start; }
+        .social-link {
+            width: 40px; height: 40px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            transition: all 0.3s ease;
+            background: linear-gradient(135deg,#0066ff,#00ccff);
+            color: white; text-decoration: none; cursor: pointer;
+        }
+        .social-link:hover { transform: translateY(-5px) scale(1.1); box-shadow: 0 8px 20px rgba(0,102,255,0.4); }
+        .social-link i { color: white; font-size: 1.1rem; }
+
+        .footer-links h4   { margin-bottom: 1rem; font-size: 1rem; }
+        .footer-links ul   { list-style: none; }
+        .footer-links ul li{ margin-bottom: 0.6rem; }
+        .footer-links a {
+            text-decoration: none; font-size: 0.8rem; opacity: 0.7;
+            transition: all 0.3s ease; cursor: pointer; color: rgba(255,255,255,0.7);
+        }
+        body.light .footer-links a { color: #475569; }
+        .footer-links a:hover { opacity: 1; color: #0066ff; }
+
+        .footer-bottom {
+            display: flex; justify-content: space-between;
+            padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.08);
+            font-size: 0.7rem; flex-wrap: wrap; gap: 1rem;
+        }
+        @media (max-width: 768px) { .footer-bottom { flex-direction: column; text-align: left; gap: 0.5rem; } }
+
+        /* ── Footer Modal ── */
+        .footer-modal { display: none; position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.95); z-index: 2500; backdrop-filter: blur(12px); }
+        .footer-modal.active-modal { display: flex; justify-content: center; align-items: center; }
+        .footer-modal-content { max-width: 800px; width: 90%; max-height: 80vh; overflow-y: auto; padding: 2rem; border-radius: 20px; position: relative; }
+        @media (max-width: 768px) {
+            .footer-modal-content { padding: 1rem; }
+            .footer-modal-content h2 { font-size: 18px !important; }
+            .footer-modal-content h3 { font-size: 16px !important; }
+            .footer-modal-content p,
+            .footer-modal-content li { font-size: 13px !important; }
+        }
+        .footer-modal-close {
+            position: absolute; top: 15px; right: 20px;
+            font-size: 1.5rem; cursor: pointer; transition: all 0.3s ease;
+            width: 35px; height: 35px; display: flex; align-items: center; justify-content: center;
+            border-radius: 50%; background: rgba(255,255,255,0.1);
+        }
+        .footer-modal-close:hover { background: #0066ff; transform: rotate(90deg); }
+
+        /* ── Project Modal ── */
+        .modal { display: none; position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.95); z-index: 2000; justify-content: center; align-items: center; backdrop-filter: blur(8px); }
+        .modal-content { background: #1a1a2e; max-width: 550px; width: 90%; border-radius: 28px; overflow: hidden; }
+        body.light .modal-content { background: white; }
+        .modal-content img { width: 100%; max-height: 260px; object-fit: cover; }
+        .modal-close { position: absolute; top: 20px; right: 30px; font-size: 2rem; cursor: pointer; color: white; transition: all 0.3s ease; }
+        .modal-close:hover { transform: scale(1.1); }
+    </style>
+</head>
+<body>
+    <canvas id="fireworks-canvas"></canvas>
+
+    <!-- ═══════════ NAVBAR ═══════════ -->
+    <nav class="navbar glass-effect" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo"><span class="logo-text">FORTUNE</span><span class="logo-accent">DIGITAL</span></div>
+            <div class="nav-right">
+                <div class="nav-menu" id="navMenu">
+                    <ul class="nav-links">
+                        <li><a href="#" data-page="home"      class="nav-link active">Home</a></li>
+                        <li><a href="#" data-page="about"     class="nav-link">About</a></li>
+                        <li><a href="#" data-page="skills"    class="nav-link">Skills</a></li>
+                        <li><a href="#" data-page="portfolio" class="nav-link">Portfolio</a></li>
+                    </ul>
+                    <button class="nav-hire-btn" id="hireNavBtn">Hire Me <i class="fas fa-arrow-right"></i></button>
+                </div>
+                <button class="theme-toggle" id="themeToggle"><i class="fas fa-moon"></i><i class="fas fa-sun"></i></button>
+                <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ═══════════ HOME PAGE ═══════════ -->
+    <div id="home-page" class="page active-page">
+        <section class="hero">
+            <canvas id="particlesCanvas" class="hero-particles"></canvas>
+            <div class="hero-container">
+                <div class="hero-content" data-aos="fade-up">
+                    <div class="hero-badge glass-effect"><i class="fas fa-crown"></i><span>AUTOMATION ARCHITECT</span></div>
+                    <h1 class="hero-title"><span class="gradient-text">Engineering Intelligence</span><br>That Drives Growth</h1>
+                    <div class="typewriter-container">
+                        <span class="typewriter-prefix">I am </span>
+                        <span id="typed-word" class="typewriter-text"></span>
+                        <span class="typed-cursor">|</span>
+                    </div>
+                    <p class="hero-description">7+ years building revenue systems for growing brands. I architect automation, CRM ecosystems, and AI workflows that deliver measurable results.</p>
+                    <div class="hero-cta">
+                        <button class="btn-primary"   id="exploreWorkBtn">Explore Work <i class="fas fa-arrow-right"></i></button>
+                        <button class="btn-secondary" id="downloadResumeBtn"><i class="fas fa-download"></i> Resume</button>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat-item"><span class="stat-number" id="stat1">347+</span><span class="stat-label">WORKFLOWS</span></div>
+                        <div class="stat-item"><span class="stat-number" id="stat2">128+</span><span class="stat-label">INTEGRATIONS</span></div>
+                        <div class="stat-item"><span class="stat-number" id="stat3">2.4M+</span><span class="stat-label">EMAILS/MONTH</span></div>
+                    </div>
+                </div>
+                <div class="hero-visual" data-aos="fade-left">
+                    <div class="floating-elements">
+                        <div class="floating-card glass-effect" data-filter="Automation & Workflow"><i class="fas fa-robot"></i><span>AI AUTOMATION</span></div>
+                        <div class="floating-card glass-effect" data-filter="CRM Systems"><i class="fas fa-chart-line"></i><span>CRM STRATEGIST</span></div>
+                        <div class="floating-card glass-effect" data-filter="Email Marketing Platforms"><i class="fas fa-envelope"></i><span>EMAIL MARKETING</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-scroll"><div class="mouse"></div><span>Scroll</span></div>
+        </section>
+
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">EXPLORE MY WORK</span>
+                <h2 class="section-title">What I <span class="gradient-text">Offer</span></h2>
+            </div>
+            <div class="preview-grid">
+                <div class="preview-card glass-effect" id="previewSkills"><i class="fas fa-cogs"></i><h3>10+ Skill Domains</h3><p>Automation, CRM, AI, Email Marketing, SEO & more.</p><span style="color:#0066ff;font-size:0.75rem;">Explore →</span></div>
+                <div class="preview-card glass-effect" id="previewPortfolio"><i class="fas fa-folder-open"></i><h3>100+ Projects</h3><p>Real implementations across 10 categories.</p><span style="color:#0066ff;font-size:0.75rem;">View Work →</span></div>
+                <div class="preview-card glass-effect" id="previewHire"><i class="fas fa-paper-plane"></i><h3>Hire Me</h3><p>Ready to transform your business? Let's talk.</p><span style="color:#0066ff;font-size:0.75rem;">Get Started →</span></div>
+            </div>
+            <div class="section-separator"></div>
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">CORE VALUES</span>
+                <h2 class="section-title">Principles That <span class="gradient-text">Guide Me</span></h2>
+            </div>
+            <div class="values-grid">
+                <div class="value-card glass-effect"><i class="fas fa-chart-line"></i><h3>Exponential Impact</h3><p>I multiply results</p></div>
+                <div class="value-card glass-effect"><i class="fas fa-shield-alt"></i><h3>Security First</h3><p>Enterprise-grade</p></div>
+                <div class="value-card glass-effect"><i class="fas fa-lightbulb"></i><h3>Innovation</h3><p>Cutting-edge AI</p></div>
+                <div class="value-card glass-effect"><i class="fas fa-handshake"></i><h3>Partnership</h3><p>Your success</p></div>
+            </div>
+
+            <!-- TESTIMONIALS -->
+            <div class="testimonials-section">
+                <div class="section-separator"></div>
+                <div class="section-header" data-aos="fade-up">
+                    <span class="section-subtitle">CLIENT FEEDBACK</span>
+                    <h2 class="section-title">Trusted by <span class="gradient-text">Industry Leaders</span></h2>
+                </div>
+                <div class="testimonial-wrapper">
+                    <div class="swiper testimonials-carousel" id="testimonialSwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="testimonial-card glass-effect">
+                                    <i class="fas fa-quote-left"></i>
+                                    <p>"The CRM and automation work delivered exactly what we needed. Process streamlined significantly."</p>
+                                    <h4>Sarah Johnson</h4><span>CEO, TechStart</span>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="testimonial-card glass-effect">
+                                    <i class="fas fa-quote-left"></i>
+                                    <p>"AI workflows saved us over 60 hours monthly. Professional and results-driven."</p>
+                                    <h4>Michael Chen</h4><span>CTO, InnovateX</span>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="testimonial-card glass-effect">
+                                    <i class="fas fa-quote-left"></i>
+                                    <p>"Email automation improved our conversions significantly. Highly recommended."</p>
+                                    <h4>Jessica Williams</h4><span>Product Lead, ScaleUp</span>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="testimonial-card glass-effect">
+                                    <i class="fas fa-quote-left"></i>
+                                    <p>"Strategic, data-driven, and delivers beyond expectations. A true partner in growth."</p>
+                                    <h4>David Rodriguez</h4><span>COO, FinCore</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                    <div class="swiper-button-prev-custom"><i class="fas fa-chevron-left" style="color:white;"></i></div>
+                    <div class="swiper-button-next-custom"><i class="fas fa-chevron-right" style="color:white;"></i></div>
+                </div>
+            </div>
+
+            <div class="page-cta glass-effect">
+                <h3 style="margin-bottom:0.5rem;">Ready to scale your operations?</h3>
+                <p>Let me build automation systems that work for you.</p>
+                <div class="page-cta-buttons">
+                    <button class="btn-primary"   id="homeToPortfolioBtn">View My Work <i class="fas fa-folder-open"></i></button>
+                    <button class="btn-secondary" id="homeToHireBtn">Hire Me Now <i class="fas fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════ ABOUT PAGE ═══════════ -->
+    <div id="about-page" class="page">
+        <section class="page-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">BEHIND THE WORK</span>
+                    <h2 class="section-title">Meet <span class="gradient-text">Adeola Adetola Fortune</span></h2>
+                </div>
+                <div class="about-grid">
+                    <div class="about-image"><img src="ownerimg.png" alt="Adeola Adetola Fortune" onerror="this.src='https://placehold.co/400x400/1a1a2e/0066ff?text=Fortune'"></div>
+                    <div>
+                        <h3 style="font-size:1.4rem;margin-bottom:0.8rem;">Adeola Adetola Fortune</h3>
+                        <p style="margin-bottom:0.8rem;opacity:0.8;">7+ years in hyper-automation, CRM architecture, and AI-driven growth. Helped growing companies scale efficiently through smart systems.</p>
+                        <div class="cert-row">
+                            <span class="cert-tag">Salesforce Certified</span>
+                            <span class="cert-tag">HubSpot Certified</span>
+                            <span class="cert-tag">Zapier Expert</span>
+                            <span class="cert-tag">GoHighLevel Pro</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-separator"></div>
+                <div class="long-about-section glass-effect">
+                    <div class="long-about-content">
+                        <h3>My Professional Journey</h3>
+                        <p>I began my career in enterprise IT operations, where I managed complex systems for mid-sized companies across different industries. What I observed was striking: businesses were losing millions to manual data entry, disconnected CRM platforms, missed follow-up opportunities, and inefficient workflows that nobody had time to fix. That frustration became the catalyst for my mission: to build systems that eliminate operational waste and drive predictable, scalable growth.</p>
+                        <p>Over the past 7+ years, I've transitioned from traditional IT operations to specialized hyper-automation architecture. I've worked with companies ranging from bootstrap startups to established enterprises, helping them leverage technology not just to keep up, but to pull ahead of competitors. My approach combines technical depth with business pragmatism — I don't build automation for the sake of technology; I build it to solve real problems and deliver measurable ROI.</p>
+                        <h4>What I Actually Do (Day to Day)</h4>
+                        <p>I design and implement complete automation ecosystems. This isn't just connecting Zapier to Gmail — that's table stakes. I build full-stack automation solutions that include:</p>
+                        <ul>
+                            <li><strong>CRM Architecture:</strong> Designing and implementing CRM systems (Salesforce, HubSpot, Zoho, GoHighLevel) that actually match your sales process.</li>
+                            <li><strong>AI Workflow Integration:</strong> Incorporating AI where it adds value — lead scoring, content generation, data extraction, customer support automation.</li>
+                            <li><strong>Email Marketing Systems:</strong> Building sequences that nurture leads, recover abandoned carts, and drive repeat purchases.</li>
+                            <li><strong>Data Enrichment Pipelines:</strong> Creating automated systems that enrich your lead data from Apollo.io, Clearbit, and Hunter.io.</li>
+                            <li><strong>Cross-Platform Integration:</strong> Connecting your entire tech stack so data flows seamlessly between all your tools.</li>
+                        </ul>
+                        <div class="impact-numbers">
+                            <div class="impact-number-item"><div class="big-number">347+</div><div>Workflows Built</div></div>
+                            <div class="impact-number-item"><div class="big-number">128+</div><div>CRM Integrations</div></div>
+                            <div class="impact-number-item"><div class="big-number">2.4M+</div><div>Emails/Month</div></div>
+                            <div class="impact-number-item"><div class="big-number">3x</div><div>Avg ROI</div></div>
+                        </div>
+                        <h4>My Technical Stack</h4>
+                        <ul>
+                            <li><strong>CRM Platforms:</strong> Salesforce (Certified Administrator), HubSpot (Certified Professional), Zoho CRM, Pipedrive, Monday.com, GoHighLevel</li>
+                            <li><strong>Automation Tools:</strong> Zapier (Expert Certified), Make.com, n8n (self-hosted), Workato, Python scripts for custom logic</li>
+                            <li><strong>Email Marketing:</strong> Klaviyo, Mailchimp, ActiveCampaign, SendGrid, HubSpot Email</li>
+                            <li><strong>AI & Language Models:</strong> OpenAI API (GPT-4), LangChain, custom prompt engineering</li>
+                            <li><strong>Data Enrichment:</strong> Apollo.io, Clearbit, Hunter.io, ZoomInfo, Lusha</li>
+                            <li><strong>Web Development:</strong> HTML/CSS/JS, React basics, Webflow, WordPress, Shopify</li>
+                        </ul>
+                        <h4>Recent Client Results</h4>
+                        <p><strong>SaaS Platform (Series A, 50 employees):</strong> Automated lead-to-cash cycle integrating Salesforce with Stripe. Result: 35% reduction in sales cycle time, $1.8M additional pipeline in 6 months.</p>
+                        <p><strong>E-commerce Brand (7-figure annual revenue):</strong> Rebuilt Klaviyo automation with 7-step abandoned cart sequence and post-purchase flows. Result: 180% increase in recovered revenue, open rates climbed from 12% to 34%.</p>
+                        <p><strong>B2B Agency (30 staff):</strong> LinkedIn Sales Navigator + HubSpot integration with automated enrichment. Result: 2.5x more qualified meetings, 65% reduction in lead research time.</p>
+                        <p><strong>Real Estate Investment Firm:</strong> Custom CRM on Monday.com with full automation connecting all lead sources. Result: Lead response time dropped from 2+ hours to under 5 minutes, 42% increase in appointment conversion.</p>
+                        <h4>How I Work With Clients</h4>
+                        <ul>
+                            <li><strong>Step 1 — Discovery Audit:</strong> Understanding your current operations and identifying bottlenecks.</li>
+                            <li><strong>Step 2 — Solution Design:</strong> Mapping out the ideal workflow with clear proposal and fixed pricing.</li>
+                            <li><strong>Step 3 — Build & Test:</strong> Building in staging, testing every scenario before going live.</li>
+                            <li><strong>Step 4 — Documentation & Training:</strong> Written guides, video tutorials, and live walkthrough.</li>
+                            <li><strong>Step 5 — Launch & Support:</strong> Monitoring for first week, 30 days free support.</li>
+                        </ul>
+                        <div class="glass-effect" style="padding:1.5rem;border-radius:24px;margin:1.5rem 0;">
+                            <h4 style="color:#0066ff;margin-bottom:1rem;">⚡ My Commitment to You</h4>
+                            <ul style="list-style:none;padding:0;margin:0;">
+                                <li style="margin-bottom:0.8rem;padding-left:1.5rem;position:relative;"><span style="position:absolute;left:0;color:#0066ff;">▹</span><strong>Response Time:</strong> Within 4 hours (usually faster)</li>
+                                <li style="margin-bottom:0.8rem;padding-left:1.5rem;position:relative;"><span style="position:absolute;left:0;color:#0066ff;">▹</span><strong>Project Turnaround:</strong> Most projects deployed within 7-14 days</li>
+                                <li style="margin-bottom:0.8rem;padding-left:1.5rem;position:relative;"><span style="position:absolute;left:0;color:#0066ff;">▹</span><strong>Communication:</strong> Weekly updates — I don't disappear after getting paid</li>
+                            </ul>
+                        </div>
+                        <div class="glass-effect" style="padding:1.5rem;border-radius:24px;margin:1.5rem 0;background:linear-gradient(135deg,rgba(0,102,255,0.05),rgba(0,204,255,0.02));">
+                            <p style="margin:0;font-size:1rem;line-height:1.6;"><i class="fas fa-comment-dots" style="color:#0066ff;margin-right:0.8rem;"></i><strong>If you're tired of manual processes slowing your growth — let's talk.</strong> I build systems that work so you can focus on growing your business.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="page-cta glass-effect">
+                    <h3 style="margin-bottom:0.5rem;">Ready to streamline your operations?</h3>
+                    <p>Let's discuss how automation can transform your business.</p>
+                    <div class="page-cta-buttons">
+                        <button class="btn-primary"   id="aboutToPortfolioBtn">View My Work <i class="fas fa-folder-open"></i></button>
+                        <button class="btn-secondary" id="aboutToHireBtn">Hire Me Now <i class="fas fa-paper-plane"></i></button>
+                    </div>
+                </div>
+
+                <div class="values-grid" style="margin-top:2rem;">
+                    <div class="value-card glass-effect"><i class="fas fa-trophy"></i><h3>7+ Years</h3><p>Experience</p></div>
+                    <div class="value-card glass-effect"><i class="fas fa-globe"></i><h3>Global</h3><p>Client base</p></div>
+                    <div class="value-card glass-effect"><i class="fas fa-certificate"></i><h3>12+ Certs</h3><p>Credentials</p></div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ═══════════ SKILLS PAGE ═══════════ -->
+    <div id="skills-page" class="page">
+        <section class="page-section">
+            <div class="container">
+                <div class="section-header"><span class="section-subtitle">MASTERY AREAS</span><h2 class="section-title">10 <span class="gradient-text">Skill Domains</span></h2></div>
+                <div class="section-separator"></div>
+                <div class="skills-wrapper" id="skillsContainer"></div>
+                <div class="page-cta glass-effect">
+                    <h3 style="margin-bottom:0.5rem;">Ready to leverage these skills?</h3>
+                    <p>Let me put my expertise to work for your business.</p>
+                    <div class="page-cta-buttons">
+                        <button class="btn-primary"   id="skillsToPortfolioBtn">See Case Studies <i class="fas fa-folder-open"></i></button>
+                        <button class="btn-secondary" id="skillsToHireBtn">Hire Me Now <i class="fas fa-paper-plane"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ═══════════ PORTFOLIO PAGE ═══════════ -->
+    <div id="portfolio-page" class="page">
+        <section class="page-section">
+            <div class="container">
+                <div id="portfolioMain">
+                    <div class="section-header">
+                        <span class="section-subtitle">PROJECT SHOWCASE</span>
+                        <h2 class="section-title">Select a <span class="gradient-text">Domain</span></h2>
+                        <p class="section-description">6 case studies per category — proven implementations.</p>
+                    </div>
+                    <div class="section-separator"></div>
+                    <div class="portfolio-category-grid" id="portfolioCategoriesGrid"></div>
+                </div>
+                <div id="portfolioDetail" style="display:none;">
+                    <button class="back-btn" id="backToCategories"><i class="fas fa-arrow-left"></i> Back to domains</button>
+                    <div id="projectListContainer"></div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ═══════════ HIRE PAGE ═══════════ -->
+    <div id="hire-page" class="page">
+        <section class="page-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">LET'S WORK TOGETHER</span>
+                    <h2 class="section-title">Ready to <span class="gradient-text">Hire Me?</span></h2>
+                    <p class="section-description">Tell me about your project, and let's build something great.</p>
+                </div>
+                <div class="section-separator"></div>
+                <div class="hire-grid">
+                    <div>
+                        <form class="hire-form glass-effect" id="hireForm" action="https://formspree.io/f/xgvazqwp" method="POST">
+                            <div class="form-group"><input type="text"  name="name"    id="name"    placeholder="Full Name" required></div>
+                            <div class="form-group"><input type="email" name="email"   id="email"   placeholder="Business Email" required></div>
+                            <div class="form-group"><input type="text"  name="company" id="company" placeholder="Company Name"></div>
+                            <div class="form-group"><textarea name="message" id="message" placeholder="Describe your automation needs or project scope..." rows="4" required></textarea></div>
+                            <input type="hidden" name="_subject" value="New Consultation Request - Fortune Digital">
+                            <input type="hidden" name="_replyto" value="email">
+                            <button type="submit" class="btn-primary btn-full" id="submitFormBtn">Send Request <i class="fas fa-paper-plane"></i></button>
+                        </form>
+                    </div>
+                    <div>
+                        <div class="info-card glass-effect"><i class="fas fa-map-marker-alt"></i><h3>Location</h3><p>Remote Worldwide</p></div>
+                        <div class="info-card glass-effect"><i class="fas fa-phone-alt"></i><h3>Phone</h3><p>+234 702 572 3662</p></div>
+                        <div class="info-card glass-effect"><i class="fas fa-envelope"></i><h3>Email</h3><p>adeolafortuneadeola12345@gmail.com</p></div>
+                    </div>
+                </div>
+                <div class="section-separator"></div>
+                <div class="social-cta-section">
+                    <div class="section-header" data-aos="fade-up">
+                        <span class="section-subtitle">CONNECT</span>
+                        <h2 class="section-title">Follow <span class="gradient-text">@fortunedigital</span></h2>
+                    </div>
+                    <div class="social-links-grid">
+                        <a href="https://www.linkedin.com/in/adetola-fortune-7a5088364" target="_blank" class="social-cta-card glass-effect linkedin"><i class="fab fa-linkedin-in"></i><span>LinkedIn</span></a>
+                        <a href="https://x.com/twealth_digital"                          target="_blank" class="social-cta-card glass-effect twitter"><i class="fab fa-twitter"></i><span>Twitter</span></a>
+                        <a href="https://www.instagram.com/fortunesolution"              target="_blank" class="social-cta-card glass-effect instagram"><i class="fab fa-instagram"></i><span>Instagram</span></a>
+                        <a href="https://www.facebook.com/profile.php?id=61578833494270" target="_blank" class="social-cta-card glass-effect facebook"><i class="fab fa-facebook-f"></i><span>Facebook</span></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ═══════════ FOOTER ═══════════ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo"><span class="logo-text">FORTUNE</span><span class="logo-accent">DIGITAL</span></div>
+                    <p style="font-size:0.75rem;opacity:0.7;">Automation Architect — Smart Systems.</p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/adetola-fortune-7a5088364" target="_blank" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://x.com/twealth_digital"                          target="_blank" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/fortunesolution"              target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=61578833494270" target="_blank" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                <!-- On mobile these 3 divs sit inside .footer-links-row so they go side-by-side -->
+                <div class="footer-links-row" style="display:contents;">
+                    <div class="footer-links">
+                        <h4>Expertise</h4>
+                        <ul>
+                            <li><a class="footer-nav-link" data-page="skills">Automation</a></li>
+                            <li><a class="footer-nav-link" data-page="skills">CRM Systems</a></li>
+                            <li><a class="footer-nav-link" data-page="skills">Email Marketing</a></li>
+                            <li><a class="footer-nav-link" data-page="skills">AI Engineering</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a class="footer-page-link" data-page="case-studies">Case Studies</a></li>
+                            <li><a class="footer-page-link" data-page="documentation">Documentation</a></li>
+                            <li><a class="footer-page-link" data-page="support">Support</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Legal</h4>
+                        <ul>
+                            <li><a class="footer-page-link" data-page="privacy">Privacy</a></li>
+                            <li><a class="footer-page-link" data-page="terms">Terms</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Fortune Digital — All rights reserved.</p>
+                <div class="footer-legal"><i class="fas fa-crown" style="color:#0066ff;"></i> Adeola Adetola Fortune</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Footer modal -->
+    <div id="footerModal" class="footer-modal">
+        <div class="footer-modal-content glass-effect">
+            <div class="footer-modal-close">&times;</div>
+            <div id="modalPageContent"></div>
+        </div>
+    </div>
+
+    <!-- Project modal -->
+    <div id="projectModal" class="modal">
+        <span class="modal-close">&times;</span>
+        <div class="modal-content">
+            <img id="modalImg" src="" alt="">
+            <div style="padding:1.5rem;">
+                <h3 id="modalTitle"></h3>
+                <p id="modalDesc" style="margin:0.5rem 0;"></p>
+                <a href="#" id="modalLink" target="_blank" style="color:#0066ff;">View Project →</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+    /* ──────────────────────────────────────────────
+       AOS
+    ────────────────────────────────────────────── */
+    AOS.init({ duration: 600, once: true });
+
+    /* ──────────────────────────────────────────────
+       TYPEWRITER
+    ────────────────────────────────────────────── */
+    const roles = ["Automation Architect","CRM Strategist","Email Marketing Pro","AI Workflow Engineer","Adeola Fortune"];
+    let roleIdx=0, charIdx=0, isDeleting=false;
+    const typedSpan = document.getElementById("typed-word");
+    function typeEffect(){
+        if(!typedSpan) return;
+        const current = roles[roleIdx];
+        if(isDeleting){ typedSpan.innerText = current.substring(0, charIdx-1); charIdx--; if(charIdx===0){ isDeleting=false; roleIdx=(roleIdx+1)%roles.length; setTimeout(typeEffect,400); return; } }
+        else           { typedSpan.innerText = current.substring(0, charIdx+1); charIdx++; if(charIdx===current.length){ isDeleting=true; setTimeout(typeEffect,1500); return; } }
+        setTimeout(typeEffect, 90);
+    }
+    typeEffect();
+
+    /* ──────────────────────────────────────────────
+       COUNTER ANIMATION — fixed for "2.4M+"
+    ────────────────────────────────────────────── */
+    function animateCounter(el, end, suffix, duration){
+        let start=0, startTs=null;
+        const isFloat = !Number.isInteger(end);
+        const step = ts => {
+            if(!startTs) startTs=ts;
+            const progress = Math.min((ts-startTs)/duration, 1);
+            const val = isFloat
+                ? (progress*end).toFixed(1)
+                : Math.floor(progress*end);
+            el.textContent = val + suffix;
+            if(progress<1) requestAnimationFrame(step);
+        };
+        requestAnimationFrame(step);
+    }
+
+    function isInViewport(el){ const r=el.getBoundingClientRect(); return r.top<=window.innerHeight && r.bottom>=0; }
+    let statsAnimated=false;
+    function checkStats(){
+        if(statsAnimated) return;
+        const s1=document.getElementById('stat1');
+        if(s1 && isInViewport(s1)){
+            statsAnimated=true;
+            animateCounter(s1, 347,  '+', 2000);
+            animateCounter(document.getElementById('stat2'), 128,  '+', 2000);
+            animateCounter(document.getElementById('stat3'), 2.4, 'M+', 2000);
+        }
+    }
+    window.addEventListener('scroll', checkStats);
+    window.addEventListener('load',   checkStats);
+
+    /* ──────────────────────────────────────────────
+       THEME TOGGLE
+    ────────────────────────────────────────────── */
+    document.getElementById('themeToggle').addEventListener('click', () => document.body.classList.toggle('light'));
+    window.addEventListener('scroll', () => document.getElementById('navbar').classList.toggle('scrolled', window.scrollY>50));
+
+    /* ──────────────────────────────────────────────
+       MOBILE MENU — with hamburger icon toggle
+    ────────────────────────────────────────────── */
+    const hamburger = document.getElementById('hamburger');
+    const navMenu   = document.getElementById('navMenu');
+
+    function openMobileMenu(){
+        navMenu.classList.remove('closing');
+        navMenu.classList.add('show');
+        hamburger.classList.add('active');
+    }
+    function closeMobileMenu(){
+        if(!navMenu.classList.contains('show')) return;
+        navMenu.classList.add('closing');
+        hamburger.classList.remove('active');
+        navMenu.addEventListener('animationend', () => {
+            navMenu.classList.remove('show','closing');
+        }, { once:true });
+    }
+
+    hamburger.addEventListener('click', () => {
+        navMenu.classList.contains('show') ? closeMobileMenu() : openMobileMenu();
+    });
+
+    document.addEventListener('click', e => {
+        if(navMenu.classList.contains('show') && !navMenu.contains(e.target) && !hamburger.contains(e.target))
+            closeMobileMenu();
+    });
+
+    /* ──────────────────────────────────────────────
+       PARTICLES
+    ────────────────────────────────────────────── */
+    const canvas=document.getElementById('particlesCanvas'), ctx=canvas.getContext('2d');
+    let particles=[];
+    function resizeCanvas(){ canvas.width=window.innerWidth; canvas.height=window.innerHeight; }
+    window.addEventListener('resize', resizeCanvas); resizeCanvas();
+    for(let i=0;i<50;i++) particles.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,radius:Math.random()*2+1,alpha:Math.random()*0.5,vx:(Math.random()-0.5)*0.3,vy:(Math.random()-0.5)*0.2});
+    function animateParticles(){
+        ctx.clearRect(0,0,canvas.width,canvas.height);
+        particles.forEach(p=>{p.x+=p.vx;p.y+=p.vy;if(p.x<0)p.x=canvas.width;if(p.x>canvas.width)p.x=0;if(p.y<0)p.y=canvas.height;if(p.y>canvas.height)p.y=0;ctx.beginPath();ctx.arc(p.x,p.y,p.radius,0,Math.PI*2);ctx.fillStyle=`rgba(0,102,255,${p.alpha*0.3})`;ctx.fill();});
+        requestAnimationFrame(animateParticles);
+    }
+    animateParticles();
+
+    /* ──────────────────────────────────────────────
+       FIREWORKS
+    ────────────────────────────────────────────── */
+    let fwCanvas, fwCtx;
+    function showFireworks(){
+        fwCanvas=document.getElementById('fireworks-canvas');
+        fwCtx=fwCanvas.getContext('2d');
+        fwCanvas.width=window.innerWidth; fwCanvas.height=window.innerHeight;
+        let pts=[];
+        for(let i=0;i<100;i++) pts.push({x:fwCanvas.width/2,y:fwCanvas.height/2,vx:(Math.random()-0.5)*10,vy:(Math.random()-0.5)*10-4,size:Math.random()*3+1,color:`hsl(${Math.random()*360},100%,60%)`,life:1,decay:0.02});
+        let aid;
+        function loop(){
+            fwCtx.clearRect(0,0,fwCanvas.width,fwCanvas.height);
+            let allDead=true;
+            pts.forEach(p=>{ if(p.life>0){ allDead=false; p.x+=p.vx; p.y+=p.vy; p.vy+=0.2; p.life-=p.decay; fwCtx.globalAlpha=p.life; fwCtx.fillStyle=p.color; fwCtx.beginPath(); fwCtx.arc(p.x,p.y,p.size,0,Math.PI*2); fwCtx.fill(); } });
+            if(allDead){ cancelAnimationFrame(aid); fwCtx.clearRect(0,0,fwCanvas.width,fwCanvas.height); }
+            else { aid=requestAnimationFrame(loop); }
+        }
+        loop();
+        setTimeout(()=>{ if(aid) cancelAnimationFrame(aid); fwCtx.clearRect(0,0,fwCanvas.width,fwCanvas.height); },2500);
+    }
+
+    /* ──────────────────────────────────────────────
+       SKILLS DATA & RENDER
+    ────────────────────────────────────────────── */
+    const skillCategories = [
+        {name:"Website & Dev",         icon:"fas fa-code",        skills:["Figma","React","Webflow","Tailwind"]},
+        {name:"Automation",            icon:"fas fa-cogs",        skills:["Zapier","Make.com","n8n","Python"]},
+        {name:"Email Marketing",       icon:"fas fa-envelope",    skills:["Klaviyo","Mailchimp","ActiveCampaign","SendGrid"]},
+        {name:"CRM Systems",           icon:"fas fa-users",       skills:["Salesforce","HubSpot","Zoho","GoHighLevel"]},
+        {name:"Marketing Automation",  icon:"fas fa-bullhorn",    skills:["Marketo","Customer.io","Omnisend"]},
+        {name:"SEO",                   icon:"fas fa-search",      skills:["Keyword Research","Ahrefs","SEMrush"]},
+        {name:"Data Enrichment",       icon:"fas fa-database",    skills:["Apollo.io","Clearbit","Hunter.io"]},
+        {name:"AI Automation",         icon:"fas fa-robot",       skills:["OpenAI API","LangChain","RPA"]},
+        {name:"AI Prompt Engineering", icon:"fas fa-message",     skills:["ChatGPT","Claude","Midjourney"]},
+        {name:"Social Media",          icon:"fab fa-instagram",   skills:["Buffer","Hootsuite","Later"]}
+    ];
+    const skillsContainer = document.getElementById("skillsContainer");
+    skillCategories.forEach(cat=>{
+        const card=document.createElement("div"); card.className="skill-card glass-effect";
+        card.innerHTML=`<i class="${cat.icon}"></i><h3>${cat.name}</h3><div class="skill-tags">${cat.skills.map(s=>`<span class="skill-tag">${s}</span>`).join('')}</div>`;
+        skillsContainer.appendChild(card);
+    });
+
+    /* ──────────────────────────────────────────────
+       PORTFOLIO DATA & RENDER
+    ────────────────────────────────────────────── */
+    const portfolioCategories = skillCategories.map((cat,idx)=>({
+        name:cat.name, icon:cat.icon,
+        projects: Array.from({length:6},(_,i)=>({
+            title:`${cat.name} Implementation ${i+1}`,
+            desc:`System delivering +${20+i*5}% efficiency improvement.`,
+            img:`https://picsum.photos/id/${(idx*6+i+40)%100+100}/600/400`,
+            link:`#`, category:cat.name
+        }))
+    }));
+
+    const portfolioMain=document.getElementById("portfolioMain");
+    const portfolioDetail=document.getElementById("portfolioDetail");
+    const categoriesGrid=document.getElementById("portfolioCategoriesGrid");
+    const projectListContainer=document.getElementById("projectListContainer");
+    const backBtn=document.getElementById("backToCategories");
+
+    function renderCategoryGrid(){
+        categoriesGrid.innerHTML="";
+        portfolioCategories.forEach(cat=>{
+            const tile=document.createElement("div"); tile.className="category-tile glass-effect";
+            tile.innerHTML=`<i class="${cat.icon}"></i><h3>${cat.name}</h3><p style="font-size:0.65rem;">6 case studies</p>`;
+            tile.addEventListener("click",()=>showCategoryProjects(cat));
+            categoriesGrid.appendChild(tile);
+        });
+    }
+    function showCategoryProjects(category){
+        projectListContainer.innerHTML=`<h3 style="margin-bottom:1rem;font-size:1.2rem;"><i class="${category.icon}" style="color:#0066ff;"></i> ${category.name} — Implementations</h3><div class="project-grid" id="projectGrid"></div>`;
+        const grid=projectListContainer.querySelector("#projectGrid");
+        category.projects.forEach(proj=>{
+            const card=document.createElement("div"); card.className="project-card glass-effect";
+            card.innerHTML=`<img src="${proj.img}" alt="${proj.title}"><h4>${proj.title}</h4><p>${proj.desc}</p><span style="color:#0066ff;font-size:0.7rem;">View →</span>`;
+            card.addEventListener("click",()=>openModal(proj));
+            grid.appendChild(card);
+        });
+        portfolioMain.style.display="none"; portfolioDetail.style.display="block";
+    }
+    backBtn.addEventListener("click",()=>{ portfolioMain.style.display="block"; portfolioDetail.style.display="none"; });
+    renderCategoryGrid();
+
+    // Floating card → portfolio filter
+    document.querySelectorAll('.floating-card').forEach(card=>{
+        card.addEventListener('click',()=>{
+            const filterName=card.getAttribute('data-filter');
+            const targetCategory=portfolioCategories.find(c=>c.name===filterName);
+            if(targetCategory){ showCategoryProjects(targetCategory); showPage('portfolio'); }
+        });
+    });
+
+    /* ──────────────────────────────────────────────
+       PROJECT MODAL
+    ────────────────────────────────────────────── */
+    const modal=document.getElementById("projectModal");
+    function openModal(project){
+        document.getElementById("modalImg").src=project.img;
+        document.getElementById("modalTitle").innerText=project.title;
+        document.getElementById("modalDesc").innerText=project.desc;
+        document.getElementById("modalLink").href=project.link;
+        modal.style.display="flex";
+    }
+    document.querySelector(".modal-close").addEventListener("click",()=>modal.style.display="none");
+    window.addEventListener("click",e=>{ if(e.target===modal) modal.style.display="none"; });
+
+    /* ──────────────────────────────────────────────
+       PAGE NAVIGATION — hamburger closed on every nav
+    ────────────────────────────────────────────── */
+    const pages={home:'home-page',about:'about-page',skills:'skills-page',portfolio:'portfolio-page',hire:'hire-page'};
+    const navLinks=document.querySelectorAll('.nav-link');
+
+    function showPage(pageId){
+        Object.values(pages).forEach(pid=>document.getElementById(pid).classList.remove('active-page'));
+        document.getElementById(pages[pageId]).classList.add('active-page');
+        navLinks.forEach(link=>link.classList.remove('active'));
+        document.querySelector(`.nav-link[data-page="${pageId}"]`)?.classList.add('active');
+        window.scrollTo(0,0);
+        // Always close mobile menu + reset hamburger icon
+        closeMobileMenu();
+        if(pageId==='portfolio'){ portfolioMain.style.display="block"; portfolioDetail.style.display="none"; }
+    }
+
+    navLinks.forEach(link=>link.addEventListener('click',e=>{ e.preventDefault(); showPage(link.getAttribute('data-page')); }));
+
+    document.getElementById('exploreWorkBtn')      .addEventListener('click',()=>showPage('portfolio'));
+    document.getElementById('hireNavBtn')          .addEventListener('click',()=>showPage('hire'));
+    document.getElementById('previewSkills')       .addEventListener('click',()=>showPage('skills'));
+    document.getElementById('previewPortfolio')    .addEventListener('click',()=>showPage('portfolio'));
+    document.getElementById('previewHire')         .addEventListener('click',()=>showPage('hire'));
+    document.getElementById('homeToPortfolioBtn')  ?.addEventListener('click',()=>showPage('portfolio'));
+    document.getElementById('homeToHireBtn')       ?.addEventListener('click',()=>showPage('hire'));
+    document.getElementById('aboutToPortfolioBtn') ?.addEventListener('click',()=>showPage('portfolio'));
+    document.getElementById('aboutToHireBtn')      ?.addEventListener('click',()=>showPage('hire'));
+    document.getElementById('skillsToPortfolioBtn')?.addEventListener('click',()=>showPage('portfolio'));
+    document.getElementById('skillsToHireBtn')     ?.addEventListener('click',()=>showPage('hire'));
+
+    /* ──────────────────────────────────────────────
+       DOWNLOAD RESUME
+    ────────────────────────────────────────────── */
+    document.getElementById('downloadResumeBtn').addEventListener('click',()=>{
+        const blob=new Blob(["Adeola Adetola Fortune - Automation Architect\n7+ years experience\nPhone: +2347025723662\nEmail: adeolafortuneadeola12345@gmail.com"],{type:'text/plain'});
+        const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download="Adeola_Fortune_Resume.txt"; a.click(); URL.revokeObjectURL(a.href);
+    });
+
+    /* ──────────────────────────────────────────────
+       CONTACT FORM
+    ────────────────────────────────────────────── */
+    function showSuccessModal(){
+        showFireworks();
+        const overlay=document.createElement('div'); overlay.className='success-modal-overlay';
+        overlay.innerHTML=`<div class="success-modal"><div class="success-check-icon"><i class="fas fa-check-circle"></i></div><h3>Message Sent!</h3><p>Thank you for reaching out.<br><strong>I'll respond within 4 hours.</strong></p><button id="closeSuccessModal">Got it</button></div>`;
+        document.body.appendChild(overlay);
+        overlay.querySelector('#closeSuccessModal').addEventListener('click',()=>overlay.remove());
+        overlay.addEventListener('click',e=>{ if(e.target===overlay) overlay.remove(); });
+    }
+    const hireForm=document.getElementById('hireForm');
+    if(hireForm){
+        hireForm.addEventListener('submit',async function(e){
+            e.preventDefault();
+            const submitBtn=document.getElementById('submitFormBtn');
+            const orig=submitBtn.innerHTML;
+            submitBtn.innerHTML='<i class="fas fa-spinner fa-spin"></i> Sending...'; submitBtn.disabled=true;
+            try{
+                const res=await fetch('https://formspree.io/f/xgvazqwp',{method:'POST',body:new FormData(hireForm),headers:{Accept:'application/json'}});
+                if(res.ok){ showSuccessModal(); hireForm.reset(); }
+                else { alert('Failed to send. Please email me directly at adeolafortuneadeola12345@gmail.com'); }
+            }catch(err){ alert('Network error. Please email me directly at adeolafortuneadeola12345@gmail.com'); }
+            finally{ submitBtn.innerHTML=orig; submitBtn.disabled=false; }
+        });
+    }
+
+    /* ──────────────────────────────────────────────
+       TESTIMONIAL SWIPER — mobile-correct config
+    ────────────────────────────────────────────── */
+    const isMobile = () => window.innerWidth <= 768;
+
+    const testimonialSwiper = new Swiper('#testimonialSwiper', {
+        loop: true,
+        autoplay: { delay: 4000, disableOnInteraction: false },
+        pagination: { el: '.swiper-pagination', clickable: true },
+        speed: 500,
+        /* centeredSlides only on desktop (it causes partial-slide bleed on mobile) */
+        centeredSlides: !isMobile(),
+        slidesPerView: 1,
+        spaceBetween: 16,
+        breakpoints: {
+            /* ≥ 640px: show 1 centred slide on tablet-ish */
+            640: {
+                slidesPerView: 1,
+                centeredSlides: true,
+                spaceBetween: 20
+            },
+            /* ≥ 769px (desktop): show 3, centre active */
+            769: {
+                slidesPerView: 3,
+                centeredSlides: true,
+                spaceBetween: 24
+            }
+        }
+    });
+
+    document.querySelector('.swiper-button-prev-custom')?.addEventListener('click',()=>testimonialSwiper.slidePrev(300));
+    document.querySelector('.swiper-button-next-custom')?.addEventListener('click',()=>testimonialSwiper.slideNext(300));
+
+    /* ──────────────────────────────────────────────
+       FOOTER MODAL CONTENT
+    ────────────────────────────────────────────── */
+    const footerModal=document.getElementById('footerModal');
+    const modalPageContent=document.getElementById('modalPageContent');
+    const footerPageContent={
+        'case-studies':{ title:'Case Studies', content:`<p>Detailed case studies from recent client implementations.</p><h3 style="color:#00ccff;margin:1.5rem 0 0.8rem;">SaaS Platform (Series A)</h3><p><strong>Challenge:</strong> Manual lead-to-cash cycle causing 2-3 week delays.</p><p><strong>Result:</strong> 35% faster sales cycle, $1.8M additional pipeline in 6 months.</p><h3 style="color:#00ccff;margin:1.5rem 0 0.8rem;">E-commerce Brand</h3><p><strong>Challenge:</strong> 78% abandoned cart rate, 12% email open rates.</p><p><strong>Result:</strong> 180% increase in recovered revenue, open rates climbed to 34%.</p><h3 style="color:#00ccff;margin:1.5rem 0 0.8rem;">B2B Agency</h3><p><strong>Challenge:</strong> Inconsistent lead flow, no systematic follow-up.</p><p><strong>Result:</strong> 2.5x more qualified meetings monthly, 65% reduction in lead research time.</p><h3 style="color:#00ccff;margin:1.5rem 0 0.8rem;">Real Estate Investment Firm</h3><p><strong>Challenge:</strong> 500+ leads/month across spreadsheets and Facebook — nothing centralized.</p><p><strong>Result:</strong> Lead response time under 5 minutes, 42% increase in appointment conversion.</p>`},
+        'documentation':{ title:'Documentation', content:`<p>Every project includes comprehensive documentation so your team can manage systems independently.</p><h3 style="color:#00ccff;margin:1.5rem 0 0.8rem;">What's Included:</h3><ul style="margin:0.5rem 0 1rem 2rem;"><li>Workflow Architecture Diagrams</li><li>Step-by-Step Setup Guides with screenshots</li><li>Video Tutorial Library (15-30 min walkthroughs)</li><li>Troubleshooting Guide</li><li>Maintenance Schedule</li><li>Scaling Guidelines</li></ul><p>All documentation delivered via shared Google Drive or Notion workspace. You own everything.</p>`},
+        'support':{ title:'Support', content:`<p>Ongoing support to ensure systems continue working as your business grows.</p><h3 style="color:#00ccff;margin:1.5rem 0 0.8rem;">Standard (Included):</h3><ul style="margin:0.5rem 0 1rem 2rem;"><li>30 days free technical support</li><li>Email response within 4 business hours</li><li>Bug fixes and critical issue resolution</li></ul><h3 style="color:#00ccff;margin:1rem 0 0.8rem;">Emergency:</h3><p><strong>+234 702 572 3662</strong> — response within 1 hour for system-down situations.</p>`},
+        'privacy':{ title:'Privacy Policy', content:`<p><strong>Last Updated:</strong> 2026</p><p>Fortune Digital respects your privacy.</p><h3 style="color:#00ccff;margin:1.5rem 0 0.8rem;">Information Collected:</h3><ul style="margin:0.5rem 0 1rem 2rem;"><li>Contact information provided via forms</li><li>Project details shared during consultations</li><li>Anonymous website analytics</li></ul><h3 style="color:#00ccff;margin:1rem 0 0.8rem;">Data Sharing:</h3><p>I do not sell, trade, or rent your personal information. Contact: <strong>adeolafortuneadeola12345@gmail.com</strong></p>`},
+        'terms':{ title:'Terms of Service', content:`<p><strong>Last Updated:</strong> 2026</p><h3 style="color:#00ccff;margin:1.5rem 0 0.8rem;">Payment Terms:</h3><ul style="margin:0.5rem 0 1rem 2rem;"><li>50% deposit required before project start</li><li>50% balance due upon completion</li><li>Payment via bank transfer or PayPal</li></ul><h3 style="color:#00ccff;margin:1rem 0 0.8rem;">Intellectual Property:</h3><p>You own all final deliverables. Contact: <strong>adeolafortuneadeola12345@gmail.com</strong></p>`}
+    };
+
+    document.querySelectorAll('.footer-page-link').forEach(link=>{
+        link.addEventListener('click',e=>{
+            e.preventDefault();
+            const content=footerPageContent[link.getAttribute('data-page')];
+            if(content){ modalPageContent.innerHTML=`<h2 style="color:#0066ff;margin-bottom:1rem;">${content.title}</h2>${content.content}`; footerModal.classList.add('active-modal'); document.body.style.overflow='hidden'; }
+        });
+    });
+    document.querySelectorAll('.footer-nav-link').forEach(link=>link.addEventListener('click',e=>{ e.preventDefault(); showPage('skills'); }));
+    document.querySelector('.footer-modal-close').addEventListener('click',()=>{ footerModal.classList.remove('active-modal'); document.body.style.overflow=''; });
+    footerModal.addEventListener('click',e=>{ if(e.target===footerModal){ footerModal.classList.remove('active-modal'); document.body.style.overflow=''; } });
+
+    window.addEventListener('resize',()=>{ if(fwCanvas){ fwCanvas.width=window.innerWidth; fwCanvas.height=window.innerHeight; } });
+    </script>
+</body>
+</html>
