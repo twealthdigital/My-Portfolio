@@ -312,6 +312,16 @@
                 link: "https://demo.farost.net/equita/#",
                 category: "Website & Dev",
               },
+
+             {
+                title: "Logististics Website",
+                desc: "Equita is a global logistics company providing warehousing, freight, customs, and supply chain solutions worldwide",
+                thumbnail: "webimg2.png",
+                modalImg: "webimg2.png",
+                link: "https://demo.farost.net/equita/#",
+                category: "Website & Dev",
+              },
+             
               {
                 title: "Social Enterprise Website",
                 desc: "INNOCLUSION is a social initiative creating an inclusive, sustainable community where neurodivergent adults can build meaningful lives through work, support, and connection.",
