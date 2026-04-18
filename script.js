@@ -307,20 +307,13 @@
               {
                 title: "Logististics Website",
                 desc: "Equita is a global logistics company providing warehousing, freight, customs, and supply chain solutions worldwide",
-                thumbnail: "webimg2.png",
-                modalImg: "webimg2.png",
+                thumbnail: "https://lh3.googleusercontent.com/pw/AP1GczN7XJr9IeRpR-JsXxlfZ831VjGqtn8VMi7dhKqPcem7-WruBb6R76dDks_kjmeNtBNR3ZgXPDMQ1oa0qvMELGjFrT8JOmHuT-a5fDzjoMs4RCMTxQM=w2400",
+                modalImg: "https://lh3.googleusercontent.com/pw/AP1GczN7XJr9IeRpR-JsXxlfZ831VjGqtn8VMi7dhKqPcem7-WruBb6R76dDks_kjmeNtBNR3ZgXPDMQ1oa0qvMELGjFrT8JOmHuT-a5fDzjoMs4RCMTxQM=w2400",
                 link: "https://demo.farost.net/equita/#",
                 category: "Website & Dev",
               },
 
-             {
-                title: "Logististics Website",
-                desc: "Equita is a global logistics company providing warehousing, freight, customs, and supply chain solutions worldwide",
-                thumbnail: "webimg2.png",
-                modalImg: "webimg2.png",
-                link: "https://demo.farost.net/equita/#",
-                category: "Website & Dev",
-              },
+             
              
               {
                 title: "Social Enterprise Website",
